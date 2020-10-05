@@ -1,0 +1,49 @@
+# Project: FA(2차원배열)
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = 2차원배열.o 2차원배열2.o 2차원배열출력1.o 2차원배열출력2.o 2차원배열출력3.o 방배정1.o 방배정2.o 방배정2_강사풀이.o
+LINKOBJ  = 2차원배열.o 2차원배열2.o 2차원배열출력1.o 2차원배열출력2.o 2차원배열출력3.o 방배정1.o 방배정2.o 방배정2_강사풀이.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = FA(2차원배열).exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+2차원배열.o: 2차원배열.cpp
+	$(CPP) -c 2차원배열.cpp -o 2차원배열.o $(CXXFLAGS)
+
+2차원배열2.o: 2차원배열2.cpp
+	$(CPP) -c 2차원배열2.cpp -o 2차원배열2.o $(CXXFLAGS)
+
+2차원배열출력1.o: 2차원배열출력1.cpp
+	$(CPP) -c 2차원배열출력1.cpp -o 2차원배열출력1.o $(CXXFLAGS)
+
+2차원배열출력2.o: 2차원배열출력2.cpp
+	$(CPP) -c 2차원배열출력2.cpp -o 2차원배열출력2.o $(CXXFLAGS)
+
+2차원배열출력3.o: 2차원배열출력3.cpp
+	$(CPP) -c 2차원배열출력3.cpp -o 2차원배열출력3.o $(CXXFLAGS)
+
+방배정1.o: 방배정1.cpp
+	$(CPP) -c 방배정1.cpp -o 방배정1.o $(CXXFLAGS)
+
+방배정2.o: 방배정2.cpp
+	$(CPP) -c 방배정2.cpp -o 방배정2.o $(CXXFLAGS)
+
+방배정2_강사풀이.o: 방배정2_강사풀이.cpp
+	$(CPP) -c 방배정2_강사풀이.cpp -o 방배정2_강사풀이.o $(CXXFLAGS)
